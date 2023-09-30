@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import Search from "@icons/search.astro"
+import Logo from "@assets/logo_navbar.svg";
+---
+
+<header class="w-full h-auto px-4 py-5 border-b border-sky-700/75">
+    <nav class="flex items-center justify-between gap-x-3">
+        <a href="/"><Image src={Logo} alt={"Logo de la empresa Desoft"}/></a>
+        
+        <div role="search" class="w-auto h-full flex items-center justify-center peer">
+            <input type="search" name="search" id="search" class="peer py-1 px-2 bg-blue-50 text-sky-950 font-inter ring-1 ring-sky-700/75 rounded-tl-md rounded-bl-md shadow shadow-sky-700/75 outline-none focus:ring-2"/>
+            <button type="button" class="text-sky-950 ring-1 ring-sky-700/75 p-1 rounded-tr-md rounded-br-md shadow shadow-sky-700/75 peer-focus:ring-2"><Search /></button>
+        </div>
+
+        <div class="w-auto h-full flex items-center justify-center border border-sky-700/75 rounded-md">
+            <a href="" class="py-1 px-2 w-full h-full rounded-tl-md rounded-bl-md text-sky-700 font-normal font-inter text-lg transition-all hover:bg-sky-700 hover:text-sky-50">Servicios</a>
+            <a href="" class="py-1 px-2 w-full h-full text-sky-700 font-normal font-inter text-lg transition-all hover:bg-sky-700 hover:text-sky-50">Información</a>
+            <a href="" class="py-1 px-2 w-full h-full text-sky-700 font-normal font-inter text-lg transition-all hover:bg-sky-700 hover:text-sky-50 rounded-tr-md rounded-br-md">Eventos</a>
+        </div>
+    </nav>
+</header>

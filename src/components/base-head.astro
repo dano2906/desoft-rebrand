@@ -1,0 +1,33 @@
+---
+import { SEO } from 'astro-seo';
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const {title, description} = Astro.props;
+---
+<head>
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+          image: "/favicon.ico",
+        }
+      }}
+      twitter={{
+        creator: "@dleon_98"
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }]
+      }}
+    />
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+</head>

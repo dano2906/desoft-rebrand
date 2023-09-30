@@ -1,0 +1,25 @@
+---
+import BaseHead from "@components/base-head.astro";
+import "../styles/base.css"
+import Navigation from "@components/navigation.astro";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Sitio no oficial de la empresa Desoft creado como método de estudio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<BaseHead title={title} description={description}/>
+	<body class="bg-sky-50">
+		<div class="max-w-full sm:max-w-2xl md:max-w-4xl min-h-screen mx-auto sm:border-l sm:border-r border-sky-700/75">
+			<Navigation />
+			<main>
+				<slot />
+			</main>
+		</div>
+	</body>
+</html>
