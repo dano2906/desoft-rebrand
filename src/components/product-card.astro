@@ -1,0 +1,24 @@
+---
+import type { Product } from './services-section.astro';
+import {Image} from "astro:assets"
+ 
+interface Props {
+    product: Product;
+}
+const {product} = Astro.props
+const {description,icon,text,url} = product;
+---
+
+<article class="transition-all border border-sky-700/75 flex flex-col items-center justify-center gap-y-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-50 from-0% via-sky-100 via-70% to-sky-100/75 to-95%">
+    <Image src={icon} alt={text} width={192} height={192} format='webp' class="h-1/2"/>
+    <div class="p-2 h-1/2 flex flex-col items-center justify-center gap-y-6">
+        <a href={url} class="h-1/5 text-xl text-center font-inter font-semibold [text-wrap:balance] text-sky-700">{text}</a>
+        <span class="h-4/5 text-sm font-inter font-normal tracking-wide text-sky-700/90 [text-wrap:balance] text-center">{description}</span>
+    </div>
+</article>
+
+<style>
+    article:hover {
+        @apply scale-105;
+    }
+</style>
