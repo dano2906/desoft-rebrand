@@ -1,0 +1,16 @@
+---
+import ProductCard from "./product-card.astro";
+import {products} from "@constants"
+---
+
+<section class="border-b border-sky-700/75 px-6 py-10 flex flex-col items-center justify-center gap-y-10">
+    <h2 class="text-4xl font-inter font-semibold text-center text-sky-700/75">Principales productos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {
+            products.map((product)=> (
+                <ProductCard product={product} />
+            ))
+        }
+    </div>
+    <a href="/" class="border border-sky-700/75 bg-sky-700/75 text-sky-50 py-3 px-6 text-2xl font-inter font-semibold rounded-md shadow transition-all hover:scale-105 hover:text-sky-700/75 hover:bg-sky-50 hover:border hover:border-sky-700/75">Ver más</a>
+</section>

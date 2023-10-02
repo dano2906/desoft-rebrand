@@ -1,0 +1,16 @@
+---
+import {services} from "@constants"
+import { Image } from "astro:assets";
+---
+
+{
+    services.map(({title,icon,description}) => (
+        <article class="w-full p-3 flex flex-col items-center justify-center bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-sky-50 from-0% via-sky-100 via-70% to-sky-100/75 to-95% border border-sky-700/75 transition-all hover:shadow-md hover:shadow-sky-700/75">
+            <div class="w-full flex items-center justify-start gap-x-4">
+                <Image src={icon} alt={title} width={64} height={64}/>
+                <h3 class="text-base text-center font-inter font-semibold text-sky-700">{title}</h3>
+            </div>
+            <p class="text-sm font-inter font-normal tracking-wide text-sky-700/90 [text-wrap:balance] text-left">{description}</p>    
+        </article>
+    ))
+}

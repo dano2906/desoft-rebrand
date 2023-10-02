@@ -1,56 +1,15 @@
 ---
-import BIMAS from "@assets/Gestión-Estratégica.png"
-import EnerguX from "@assets/AdminFin.png"
-import SuiteSegInf from "@assets/Inform.png"
-import GestionI from "@assets/Gestión-Integral_0.png"
-import ProductCard from "./product-card.astro";
-
-export interface Product {
-    text: string;
-    icon: ImageMetadata;
-    url: string;
-    description: string;
-}
-
-const products: Product[] = [{
-    text: 'BIMAS',
-    icon: BIMAS,
-    url: 'bimas',
-    description: 'El Sistema Ejecutivo para el Seguimiento a Estrategias Organizacionales, BIMAS, gestiona el Mapa Estratégico de una organización a través de un Cuadro de Mando Integral propio.',
-},{
-    text: 'Energux',
-    icon: EnerguX,
-    url: 'energux',
-    description: 'Sistema para la gestión y control de los portadores energéticos incluyendo energía eléctrica y sus equipos de respaldo, lubricantes, combustibles y sus índices de consumo en los equipos, gas y agua.'
-},{
-    text: 'Suite de seguridad informática',
-    icon: SuiteSegInf,
-    url: 'seguridad',
-    description: 'La Suite de Seguridad Informática ofrece a las entidades un enfoque sistémico para la gestión de su ciberseguridad, acorde a los procedimientos y normativas nacionales.'
-},{
-    text: 'Gestión de recursos hídricos',
-    icon: GestionI,
-    url: 'recursos-hidricos',
-    description: 'La Suite de aplicaciones para la gestión de los recursos hídricos es un Sistema para el control, uso y manejo sostenible de las aguas terrestres.'
-},{
-    text: 'Plataforma ROIC',
-    icon: GestionI,
-    url: 'roic',
-    description: 'Gestión de objetos interconectados para implementación de proyectos de IoT o Industria 4.0 para la optimización de procesos empresariales.'
-},{
-    text: 'Sistema de gestión interna de gobierno',
-    icon: GestionI,
-    url: 'sisgestint',
-    description: 'Solución integrada para la gestión interna de gobierno en los diferentes niveles de subordinación: municipal, provincial y nacional, posibilitando el análisis de desempeño en cada esfera.'
-}]
+import { Image } from "astro:assets";
+import Servicios from "@assets/LineasDeServicios.gif"
+import ServicesBanner from "./services-banner.astro";
 ---
-<section class="px-6 py-14 flex flex-col items-center justify-center gap-y-10">
-    <h2 class="text-4xl font-inter font-semibold text-center text-sky-700/75">Principales productos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-1">
-        {
-            products.map((product)=> (
-                <ProductCard product={product} />
-            ))
-        }
+
+
+<section class="w-full h-auto py-6 flex items-center justify-center">
+    <div class="w-1/2 flex flex-col items-center justify-center gap-y-2 p-3">
+        <ServicesBanner />
+    </div>
+    <div class="w-1/2 p-3">
+        <Image src={Servicios} alt={"Servicios de la empresa Desoft"} class="border border-sky-700/75"/>
     </div>
 </section>

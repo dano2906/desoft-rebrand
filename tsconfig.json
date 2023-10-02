@@ -7,7 +7,9 @@
       "@components/*": ["src/components/*"],
       "@icons/*": ["src/components/icons/*"],
       "@assets/*": ["src/assets/*"],
-      "@layouts/*":["src/layouts/*"]
+      "@layouts/*":["src/layouts/*"],
+      "@constants":["src/utils/constants.ts"],
+      "@interfaces":["src/utils/interfaces.ts"]
     }
   }
 }
